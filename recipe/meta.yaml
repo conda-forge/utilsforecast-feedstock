@@ -1,5 +1,5 @@
 {% set name = "utilsforecast" %}
-{% set version = "0.2.6" %}
+{% set version = "0.2.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/utilsforecast-{{ version }}.tar.gz
-  sha256: 3231cbf03a4ca859031a31d871df2ec16269423108122cd0a354cd05d66300ee
+  sha256: 968b430a7f966dd520dc98dbac3530d2b4a2fa3f98319ece8bc55c431378abbb
 
 build:
   noarch: python
