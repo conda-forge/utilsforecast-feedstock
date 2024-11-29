@@ -16,22 +16,23 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy
     - packaging
     - pandas >=1.1.1
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - utilsforecast
   commands:
     - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/Nixtla/utilsforecast
