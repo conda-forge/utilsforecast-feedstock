@@ -1,13 +1,13 @@
 {% set name = "utilsforecast" %}
-{% set version = "0.2.9" %}
+{% set version = "0.2.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/utilsforecast-{{ version }}.tar.gz
-  sha256: f6e0515637d5f6556327e3b1784a3dc190c7a193b9419aca029e1395d099215c
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/utilsforecast-{{ version }}.tar.gz
+  sha256: 6058ca1a00b7e9dc02346a071a8e3f4dabe2a01f6f6b5a563c6c849754a86d3e
 
 build:
   noarch: python
@@ -16,22 +16,23 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy
     - packaging
     - pandas >=1.1.1
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - utilsforecast
   commands:
     - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/Nixtla/utilsforecast
